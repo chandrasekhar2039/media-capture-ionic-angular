@@ -6,6 +6,8 @@ import {
   IonContent,
   IonButton,
 } from '@ionic/angular/standalone';
+import { MediaCapture } from '@awesome-cordova-plugins/media-capture';
+import { Capacitor } from '@capacitor/core';
 
 @Component({
   selector: 'app-home',
@@ -22,9 +24,21 @@ export class HomePage {
     'https://codeskulptor-demos.commondatastorage.googleapis.com/GalaxyInvaders/theme_01.mp3';
   constructor() {}
 
-  captureImage() {}
+  async captureImage() {
+    const imageFile = await MediaCapture.captureImage();
+    if (imageFile instanceof Array)
+      this.image = Capacitor.convertFileSrc(imageFile[0].fullPath);
+  }
 
-  captureVideo() {}
+  async captureVideo() {
+    const videoFile = await MediaCapture.captureVideo();
+    if (videoFile instanceof Array)
+      this.video = Capacitor.convertFileSrc(videoFile[0].fullPath);
+  }
 
-  captureAudio() {}
+  async captureAudio() {
+    const audioFile = await MediaCapture.captureAudio();
+    if (audioFile instanceof Array)
+      this.audio = Capacitor.convertFileSrc(audioFile[0].fullPath);
+  }
 }
