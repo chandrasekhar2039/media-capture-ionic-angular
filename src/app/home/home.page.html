@@ -1,20 +1,32 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <ion-title> Media Capture </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div class="container">
+    <div class="ion-padding block">
+      <h1>Capture Image</h1>
+      <img alt="capture image" [src]="image" />
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+      <ion-button class="ion-padding" (click)="captureImage()">Capture Image</ion-button>
+    </div>
+
+    <div class="ion-padding video block">
+      <h1>Capture Video</h1>
+      <video controls preload="metadata">
+        <source [src]="video" />
+      </video>
+      <ion-button class="ion-padding" (click)="captureImage()">Capture Video</ion-button>
+    </div>
+
+    <div class="ion-padding block">
+      <h1>Capture Audio</h1>
+      <audio controls>
+        <source [src]="audio" />
+      </audio>
+      <ion-button class="ion-padding" (click)="captureImage()">Capture Audio</ion-button>
+    </div>
   </div>
 </ion-content>
