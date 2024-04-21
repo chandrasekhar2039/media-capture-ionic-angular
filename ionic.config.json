@@ -1,0 +1,7 @@
+{
+  "name": "media-capture",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
