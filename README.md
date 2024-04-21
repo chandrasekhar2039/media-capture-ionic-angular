@@ -14,8 +14,7 @@ Read the full article on Medium: ["From Lens to Screen: Demystifying Media Captu
 
 - **src/**: Contains the source code for the Ionic Angular application.
 - **www/**: Contains the compiled code for the Ionic application.
-- **plugins/**: Contains Cordova plugins used in the project.
-- **config.xml**: Cordova configuration file.
+- **capacitor.config.ts**: Capacitor configuration file.
 - **package.json**: NPM package configuration file.
 
 ## Usage
